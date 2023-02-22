@@ -97,10 +97,13 @@ def benchmark_numpy(STREAM_ARRAY_SIZE):
     c = np.empty(STREAM_ARRAY_SIZE, dtype=object)
     scalar = 2.0    
     times = [0 for i in range(4)]
-    for j in range(STREAM_ARRAY_SIZE):
-        a[j] = 1.0
-        b[j] = 2.0
-        c[j] = 0.0
+    # for j in range(STREAM_ARRAY_SIZE):
+    #     a[j] = 1.0
+    #     b[j] = 2.0
+    #     c[j] = 0.0
+    a.fill(1.0)
+    b.fill(2.0)
+    c.fill(0.0)
     
     # copy
     times[0] = timer()
